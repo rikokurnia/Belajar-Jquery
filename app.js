@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     let button = $('button')
         button.click(function() {
-          let h3 =  $('h3, p').toggle('3000')
+          let h3 =  $('h3').toggle('3000')
              h3.addClass('border')
              h3.css(style)
              
@@ -15,10 +15,16 @@ $(document).ready(function() {
         }
 
         button.click(function() {
-            $('p').css('background-color', 'blue').toogle('4000')
-
+            $('p').css('background-color', 'blue').show('4000').hide('2000')
         })
          
 
         $('ul').prev().css('background-color',"green")
+
+        // learn ajax
+            let ajax = $('#ajax')
+                ajax.click(function() {
+                    $('#div1').load('data.txt')
+                });
+
 })
