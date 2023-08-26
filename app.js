@@ -12,37 +12,67 @@ $(document).ready(function () {
     background: "yellow",
   };
 
-  button.click(function () {
-    $("p").css("background-color", "blue").show("4000").hide("2000");
-  });
+  // ajax take data from data.txt
+      let ajax = $('#ajax')
+        ajax.click(function(){
+          $('#div1').load('data.txt')
+        })
 
-  $("ul").prev().css("background-color", "green");
 
-  // learn ajax
-  let ajax = $("#ajax");
-  ajax.click(function () {
-    $("#div1").load("data.txt");
-  });
+  // selector 
+    $('#selector li:odd').parent().css(style); //will be yellow style
+    $('#selector li').empty() //will be remove element in the selector
+    $('#list').prepend('zero')  //add first element
+  
+  //?event dom from HTML
+      let value = $('#value')
+        value.click(function() {
+          alert($('#val').val());
+        })
 
-  let li = $("li");
-  li.append("empat");
+        // change with html or text
+        $('#changeBtn').click(function() {
+          $('#change1').text('the word has been changed')
+          $('#change1').html('<b>the word has been changed</b>')
+        })
 
-  // event double click
-    const dblclick = $('#clickdbl')
-      dblclick.dblclick(function() {
-        hideInput.alert('this function double click')
-      })
+          // set the new atribute(link)
+            $('#btnLink').click(function() {
+              $('#w3s').attr('href','https://github.com/')
+            })
 
-    // event hide input
-    let hideInput = $('#hideIN')
-      hideInput.keypress(function(){
-        $(this).hide()
-      })
 
-    // event fade
-      $("#box").click(function(){
-        $(".boxes1").fadeToggle();
-        $(".boxes1").fadeToggle("slow");
-        $(".boxes1").fadeToggle(3000);
-      });
+        // remove element with jquery
+            /*
+            remove() - Removes the selected element (and its child elements)
+            empty() - Removes the child elements from the selected element
+            */
+
+            $('p').remove('#removeP')
+
+        // style css
+            /*
+            css() - Sets one or more CSS properties of the selected element(s)
+            */
+
+          $('#showBtn').dblclick(function(){
+            $('#showUp').toggle(3000);
+          })
+
+        //event handler
+          $('#mEnter').mouseenter(function(){
+            alert('i like animal')
+          })
+            // will be remove if the mouse leave
+          $('#removeM').mouseleave(function(){
+            $('#hewan').remove();
+            alert('i remove the  animal')
+          })
+
+          // add fruit with append
+          $('#fruitBtn').click(function(){
+            let addFruit = $('#fruits').val()
+              $('#fruit').append('<li>'+ addFruit +'</li>') 
+          })
+
 });
