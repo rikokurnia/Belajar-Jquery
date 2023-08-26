@@ -1,0 +1,62 @@
+<html>
+<head>
+<!--Add the new slick-theme.css if you want the default styling-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<head>
+<body>
+
+  <style>
+    .your-class {
+      background-color: aqua;
+      max-width: 260px;
+      height: 50px;
+      margin: 50px auto;
+      text-align: center;
+      line-height: 50px;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
+<div class="your-class">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.your-class').slick({
+    centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+  });
+});
+</script>
+</body>
+</html>
